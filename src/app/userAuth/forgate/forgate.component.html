@@ -1,0 +1,31 @@
+<div class="main_con">
+
+    <div mat-align-tabs="center" class="tab_align" >
+        <h1 class="heading">Forgot</h1>
+        <div class="formcon">
+            <form [formGroup]="forgot" (ngSubmit)="updatedata(forgot.value)" class="formh animate__animated animate__zoomInDown">
+                <div class="mb-3 alignm1 ">
+
+                    <div class="email-col ">
+                        <mat-form-field>
+                            <input matInput placeholder="Email address" formControlName="email" />
+                            <mat-error *ngIf="email?.errors?.['required']">
+                                Email is required
+                            </mat-error>
+                            <mat-error *ngIf="email?.errors?.['email']">
+                                Please enter a valid Email
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <pre class="suggetions">Go <a (click)="goback()">Back</a></pre>
+                <div class="mtbtn">
+                <button mat-button type="submit" [disabled]="!forgot.valid" class="Forgot_s">Send</button>
+                <button mat-button type="reset" class="Forgot_s">Reset</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+</div>

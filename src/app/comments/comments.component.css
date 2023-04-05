@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+body {
+    background-color: #F4F4F4 !important;
+}
+
+.fa-regular{
+  color: rgb(77, 80, 80) !important;
+ 
+}
+.fa-regular:hover{
+  transform: scale(1.2);
+}
+
+.fa-solid, .fa-regular{
+  font-size: 25px !important;
+}
+.fa-face-grin-hearts{
+  color: dimgray !important;
+  margin: -1.9px 0px 0px 2.6px !important;
+}
+.hanim{
+  animation: beat .25s  alternate;
+}
+.hanim:hover{
+  animation: beat .25s infinite alternate;
+}
+@keyframes beat{
+	to { transform: scale(1.4); }
+}
+.reversc{
+  display: flex;
+  flex-direction: column-reverse;
+}
+.lcount{
+  margin-top: 15px;
+  padding: 2px 0px;
+  border-radius: 15px;
+  color: rgb(59, 58, 58);
+  font-size: 15px;
+  margin-left: 15px;
+}
+
+::ng-deep .mat-button-toggle-standalone{
+  -webkit-tap-highlight-color: none !important;
+}
+
+::ng-deep mat-button-toggle{
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  color: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  border: 50px;
+  margin-right: -20px !important;
+  padding: 0px;
+}
+::ng-deep .mat-button-toggle-appearance-standard:not(.mat-button-toggle-disabled):hover .mat-button-toggle-focus-overlay {
+  opacity: 0 !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.autod {
+  padding:5px !important;
+  margin: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  width: auto;
+  position: absolute;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  position:relative;
+}
+
+.maincolh::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: initial;
+}
+.addbtn{
+  position: relative;
+  width: 100%;
+  margin: -1px 15px 0px auto;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.emojibtn{
+  position: absolute;
+  left: 5%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+  transition: 800ms ease;
+}
+.emojibtn .emojh{
+  margin-left: 5px;
+  font-size: 25px;
+
+}
+
+.sent, .edit{
+  background: none;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+padding: 25px !important;
+  margin-right: 10px;
+}
+.sent:hover .senticon{
+  transform: scale(1.2);
+  color: rgb(123, 22, 218);
+}
+.refreshi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.refreshi .synci{
+  font-size: 25px !important;
+  color: gray !important;
+  margin: 3px -12px !important;
+  transition: 700ms ease;
+}
+.mat-icon-button.mat-button-disabled.mat-button-disabled{
+  color: gray;
+}
+ .refreshi:hover .synci{
+  color: crimson !important;
+  transform: rotate(300deg) !important;
+} 
+
+.edit{
+  padding:5px !important;
+  margin-right: -9px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 800ms ease;
+  z-index: 100 !important;
+}
+.edit:hover .fa-trash{
+  color:rgb(14, 179, 110);
+}
+.fa-broom{
+ color: gray;
+}
+ .fa-trash{
+  font-size: 19px !important;
+  color: gray;
+}
+
+.name{
+  width: 400px;
+  height: 20px;
+  margin-top: 3px;
+  padding: 20px 5px 10px 10px;
+  display: flex;
+  align-items: center;
+  border-bottom:0.1px solid cadetblue;
+  justify-content: space-between;
+}
+.usercomment{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  margin-left: 80px;
+  margin-top: -45px;
+}
+
+textarea {
+  width: 96%;
+  height: auto;
+  font-size: 17px;
+  margin-top: 0px;
+  margin-right: 10px;
+  resize:vertical;
+  border: none;
+  outline:none;
+}
+textarea::-webkit-scrollbar {
+  display: none;
+}
+.avatar {
+  height: 60px;
+  width: 60px;
+  margin: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+
+.Escape {
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    color: #F4F4F4;
+    text-align: center;
+    font: 900;
+    font-size: 18px;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+  
+  .Escape:first-of-type {   
+    animation: showup 7s infinite;
+  }
+  
+  .panim:last-of-type {
+      margin: 5px auto;
+      color: rgb(204, 190, 190);
+    width:5%;
+    overflow: hidden;
+    text-transform: uppercase;
+    animation: reveal 7s infinite;
+  }
+  
+  .panim:last-of-type span {
+    margin-left:-355px;
+    animation: slidein 7s infinite;
+  }
+  
+  @keyframes showup {
+      0% {opacity:0;}
+      20% {opacity:1;}
+      80% {opacity:1;}
+      100% {opacity:0;}
+  }
+  
+  @keyframes slidein {
+      0% { margin-left:-500px; }
+      20% { margin-left:-890px; }
+      35% { margin-left:25px; }
+      100% { margin-left:50px; }
+  }
+ 
+  
+  @keyframes reveal {
+      0% {opacity:0;width:0px;}
+      20% {opacity:1;width:0px;}
+      30% {width:355px;}
+      80% {opacity:1;}
+      100% {opacity:0;width:355px;}
+  }
+  .ntcenter{
+    width: auto;
+    margin: 0px auto;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.mcon{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+.secom::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+}
+.secom{
+  margin: 0;
+  padding: 0;
+    box-sizing: border-box;
+    width: 500px;
+    height: 450px;
+    overflow: scroll;
+    overflow-x: hidden !important;
+   margin: -5px auto !important;
+    border-radius:10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.commwrap{
+  padding-right: 90px;
+}
+@media (max-width:550px) {
+  .avatar {
+    height: 40px;
+    width: 40px;
+}
+.secom{
+  margin:5px 5px 0px 5px !important;
+  width: auto;
+  height:550px;
+  left: auto;
+  transform: translateY(-50%);
+  overflow-x: hidden !important;
+}
+.usercomment {
+  margin-left: 10px;
+  margin-top: -2px;
+}
+.commwrap{
+  padding-right: 20px;
+}
+.name{
+  width: -webkit-fill-available;
+  margin-left: 60px;
+  margin-right: 10px;
+  margin-top: -55px;
+}
+.uname{
+  margin-right: 130px;
+}
+}
+@media (max-width:415px){
+  .senticon{
+    height: 25px !important;
+    width: 25px !important;
+  }
+  .refreshi .synci{
+    font-size: 23px !important;
+  }
+  .commwrap{
+    padding-right: 15px;
+  }
+  .uname{
+    font-size:15px;
+    margin-right: 90px;
+  }
+  .realcomment {
+    font-size:15px !important;
+    margin: -5px 0px 0px 0px !important;
+  }
+  .addbtn{
+    margin: -10px 15px 0px auto !important;
+  }
+}
+@media (max-width:991px){
+  .Escape{
+    margin-top: 50px;
+  }
+  .mtcomment{
+    margin-top: 20px;
+  }
+
+}
+@media (max-width:376px){
+  .ntcenter{
+    font-size: 13px;
+}
+  .pngtl{
+    margin-right: 0px !important;
+  }
+  .pngtr{
+    margin-left: 0px !important;
+  }
+  .refreshi .synci{
+    font-size: 21px !important;
+  }
+  .uname{
+    font-size:12.5px;
+   margin-right: 100px;
+  }
+  .times{
+    font-size:12.5px;
+  }
+  .fa-solid, .fa-regular{
+    font-size: 20px !important;
+  }
+  .fa-trash{
+    font-size: 16px !important;
+    color: gray;
+  }
+}
+@media (max-width:335px){
+  .ntcenter{
+    font-size: 12px;
+}
+.pngtl,.pngtr{
+  height: 35px !important;
+  width: 35px !important;
+}
+  .uname{
+    font-size:12.5px;
+   margin-right: 50px;
+  }
+  .Escape {
+    font-size: 12px;
+  }
+  .panim:last-of-type span {
+    margin-left:-350px;
+    font-size: 11px;
+    animation: slidein 7s infinite;
+  }
+  .fa-solid, .fa-regular{
+    font-size: 17px !important;
+  }
+  .fa-trash{
+    font-size: 13px !important;
+    color: gray;
+  }
+  .edit{
+    padding:5px !important;
+    margin-right: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .senticon{
+    height: 20px !important;
+    width: 20px !important;
+  }
+  .refreshi .synci{
+    font-size: 20px !important;
+  }
+}
+@media (max-width:280px){
+  .uname{
+    font-size:12.5px;
+   margin-right:10px;
+  }
+
+}
+@media screen and (max-width:320px), screen and (max-height:568px){
+  .mtcomment{
+    margin-top: 150px;
+  }
+}
+.pngtl,.pngtr{
+  height: 50px;
+  width: 60px;
+}
+.pngtl{
+  margin-right: 20px;
+}
+.pngtr{
+  transform: rotateY(-180deg);
+  margin-left: 20px;
+}

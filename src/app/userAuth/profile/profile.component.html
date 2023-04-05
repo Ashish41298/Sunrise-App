@@ -1,0 +1,71 @@
+<div class="main_con">
+    <div mat-align-tabs="center" class="tab_align">
+
+        <h1 class="heading" routerLink="/home">Updates</h1>
+        <div class="" *ngIf="user$ | async as user">
+
+            <div class="container animate__animated animate__zoomIn">
+                <img class="mimage" [src]="user.photoURL ?? 'assets/images/user-icon-modified.png'" />
+                <!-- <img src="../../../assets/images/user-icon-modified.png" alt=""> -->
+                <button class="photobtn" (click)="inputField.click()"><mat-icon><img class="edit" src="../../../assets/images/edit.png" alt=""></mat-icon></button>
+                <input #inputField hidden type="file" (change)="uploadFile($event, user)" />
+            </div>
+
+
+
+
+            <form class="alimet" [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+                <div class="animate__animated animate__zoomInUp">
+                    <div class="col-6 flexi">
+                        <mat-form-field>
+                            <input type="text" maxlength="15" size="15" matInput formControlName="displayName" placeholder="Display Name" />
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="number" class="widt-input" matInput formControlName="mobileno" placeholder="Mobile No." />
+                            <mat-error *ngIf="mobileno?.errors?.['required']">
+                                Please! check the Number 
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field>
+                            <input type="text" matInput formControlName="address" placeholder="Address" />
+                        </mat-form-field>
+                    </div>
+                    <div class="mtbtn">
+                    <button type="submit" class="Profile_s"[disabled]="!profileForm.valid" mat-button>Save</button>
+                    <button type="reset" class="Profile_s" routerLink="/Login" mat-button>Skip</button>
+                </div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="" *ngIf="vrify">
+            <div class="container animate__animated animate__zoomIn">
+                <img class="mimage" src='assets/images/user-icon-modified.png' />
+            </div>
+            <form class="alimet" [formGroup]="profileForm" (ngSubmit)="savemsdb()">
+                <div class="alincon animate__animated animate__zoomInUp">
+                    <div class="col-6 d-flex flexi">
+                        <mat-form-field>
+                            <input type="text" matInput formControlName="displayName" placeholder="Display Name" />
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="number" class="widt-input" matInput formControlName="mobileno" placeholder="Mobile No." />
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field>
+                            <input type="text" matInput formControlName="address" placeholder="Address" />
+                        </mat-form-field>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>

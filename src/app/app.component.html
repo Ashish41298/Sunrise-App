@@ -1,0 +1,194 @@
+<div *ngIf="loader" class="loadingobserver">
+    <div class="loaderm">
+        <div class="loaderin">
+        </div>
+        <img class="loaderimg" src="../../assets/images/sun1212.png">
+    </div>
+    <div class="titlel">
+        Loading...
+    </div>
+</div>
+<button class="navtoggle " (click)="navtoggele()" [class]="hn ? 'navtoggle' : 'hnavbtn'"><i
+        class="fa-solid fa-arrow-left"></i> Navigations <i class="fa-solid fa-arrow-right"></i></button>
+<mat-drawer-container class="example-container " autosize>
+
+    <mat-drawer #drawer id="drw" class="example-sidenav" mode="over">
+        <!--MAt-link-->
+        <!-- user profie -->
+        <div class="mainb ">
+
+            <div class="avatar-con mt-3">
+                <div *ngIf="user$ | async as user">
+                    <img class="avatar" (click)="navigation()"
+                        [src]="firebduser.photoURL ?? '../../../assets/images/user-icon-modified.png'" />
+                </div>
+
+                <div *ngIf="msname">
+                    <img class="avatar" (click)="navigation()" src='../../../assets/images/user-icon-modified.png' />
+                </div>
+            </div>
+            <div class="bgh mt-1"></div>
+        </div>
+        <div class="usercenter" *ngIf="user$ | async as user">
+            <span class="wel">Welcome</span>
+            <h3>{{firebduser.displayName }}</h3>
+            <h6>{{user.email}}</h6>
+        </div>
+
+        <div class="usercenter" [class.class1]="!msname" *ngIf="name">
+            <span class="wel">Welcome</span>
+            <h3>{{name.displayName}}</h3>
+            <h6>{{name.email}}</h6>
+        </div>
+
+        <mat-divider></mat-divider>
+        <a href="" class="navigate" routerLink="home">
+            <button mat-button class="menu-button">
+                <mat-icon><i class="fas fa-house-damage hm micon"></i></mat-icon>
+                <span class="spb">Home</span>
+            </button></a>
+
+        <mat-divider></mat-divider>
+        <a href="" class="navigate" routerLink="category">
+            <button mat-button class="menu-button">
+                <mat-icon><i class="fas fa-igloo"></i></mat-icon>
+                <span class="spb">Category</span>
+            </button></a>
+        <mat-divider></mat-divider>
+        <a href="" class="navigate" routerLink="technews">
+            <button mat-button class="menu-button">
+                <mat-icon><i class="fas fa-microchip mc micon"></i></mat-icon>
+                <span class="spb exp">Technology</span>
+            </button></a>
+
+        <mat-divider></mat-divider>
+        <a href="" class="navigate" routerLink="business">
+            <button mat-button class="menu-button">
+                <mat-icon><i class="fas fa-briefcase bf micon"></i></mat-icon>
+                <span class="spb">Business</span>
+            </button></a>
+
+        <mat-divider></mat-divider>
+        <a href="" class="navigate" routerLink="gujarat">
+            <button mat-button class="menu-button">
+                <mat-icon>
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.000000 215.000000"
+                        preserveAspectRatio="xMidYMid " class="svg">
+                        <g transform="translate(0.000000,215.000000) scale(0.100000,-0.100000)" stroke="none">
+                            <path d="M1771 2026 c-18 -21 -72 -31 -81 -16 -5 7 -16 10 -25 6 -10 -3 -32
+                    -1 -49 5 -26 9 -38 9 -62 -3 -28 -14 -85 -11 -126 6 -11 5 -24 0 -37 -13 -26
+                    -26 -15 -74 17 -79 12 -2 22 -6 22 -9 0 -12 -47 -42 -68 -43 -12 0 -26 -8 -29
+                    -17 -9 -26 -23 -33 -65 -33 -58 0 -68 7 -68 51 l0 39 -40 -20 c-21 -11 -50
+                    -20 -64 -20 -14 0 -28 -4 -31 -10 -3 -5 -14 -10 -24 -10 -10 0 -23 -11 -29
+                    -25 -9 -18 -20 -25 -44 -27 -18 -1 -49 -3 -68 -4 -25 -1 -42 5 -62 23 -25 24
+                    -30 25 -130 20 -56 -3 -111 -8 -121 -12 -9 -4 -24 -2 -32 5 -13 11 -18 10 -30
+                    -6 -14 -18 -15 -18 -21 4 -9 33 -24 27 -24 -10 0 -18 -3 -50 -6 -70 l-7 -38
+                    -78 0 c-76 0 -79 -1 -103 -32 -27 -37 -35 -66 -22 -86 5 -9 2 -18 -10 -26 -16
+                    -12 -15 -13 10 -18 29 -6 51 9 61 42 3 11 12 20 20 20 21 0 25 -27 9 -59 -9
+                    -17 -12 -35 -9 -41 4 -6 1 -17 -5 -25 -10 -12 -9 -15 4 -15 9 0 16 -6 16 -14
+                    0 -8 7 -16 15 -20 8 -3 15 -11 15 -19 0 -21 58 -71 140 -121 114 -70 159 -87
+                    271 -105 40 -6 50 -4 73 16 15 13 36 23 46 23 10 0 22 5 25 10 3 6 19 10 35
+                    10 16 0 31 4 34 9 13 21 82 18 115 -6 7 -5 -33 -77 -46 -86 -7 -4 -13 -16 -13
+                    -25 -1 -34 -27 -54 -67 -52 -57 4 -63 2 -63 -20 0 -22 -28 -40 -63 -40 -14 0
+                    -30 -7 -38 -16 -8 -9 -21 -13 -35 -10 -13 4 -26 2 -29 -4 -3 -5 -17 -10 -31
+                    -10 -14 0 -36 -7 -49 -16 -35 -23 -68 -10 -60 24 4 22 1 29 -20 39 -22 10 -27
+                    8 -45 -14 -11 -14 -20 -32 -20 -39 0 -34 237 -284 269 -284 6 0 11 -4 11 -8 0
+                    -5 12 -21 28 -38 15 -16 41 -47 57 -69 47 -63 171 -182 228 -218 68 -43 166
+                    -80 181 -68 6 4 25 9 42 9 17 0 59 12 92 26 34 14 68 26 75 26 8 0 21 8 31 19
+                    9 10 36 26 59 36 23 9 49 21 57 26 8 5 26 14 40 19 55 23 90 45 90 58 0 14 25
+                    64 46 92 20 27 35 82 25 94 -16 19 -12 161 4 182 8 11 15 29 15 42 0 13 6 22
+                    15 22 8 0 15 -5 15 -11 0 -6 15 -1 34 10 40 25 86 28 86 6 0 -8 -6 -15 -14
+                    -15 -21 0 -34 -21 -41 -72 -7 -44 -6 -46 14 -41 17 4 21 1 21 -18 0 -13 -7
+                    -33 -15 -43 -25 -33 -19 -56 15 -56 31 0 37 -9 19 -27 -7 -7 -3 -9 15 -6 29 6
+                    34 -8 11 -27 -32 -27 -57 -180 -28 -180 7 0 18 -12 24 -27 26 -70 55 -123 66
+                    -123 15 0 17 -16 3 -25 -5 -3 -7 -30 -4 -63 5 -51 3 -60 -20 -83 -13 -15 -28
+                    -43 -31 -63 -8 -38 3 -47 25 -21 7 8 16 15 21 15 4 0 19 11 33 25 14 14 34 25
+                    46 25 27 0 38 -29 17 -45 -10 -7 -17 -14 -17 -17 0 -6 55 -1 109 9 32 5 33 7
+                    27 44 -4 26 -1 49 9 69 19 37 19 50 0 50 -20 0 -20 49 1 57 9 3 32 -8 56 -27
+                    34 -28 44 -32 67 -24 15 6 25 16 23 25 -1 9 9 22 23 29 14 7 25 21 25 30 0 29
+                    -27 83 -55 114 -22 24 -25 33 -16 45 6 9 14 23 17 32 3 9 17 22 30 28 16 7 24
+                    19 24 36 0 18 5 25 20 25 11 0 20 5 20 10 0 6 11 10 24 10 39 0 86 12 86 22 0
+                    10 -105 5 -154 -7 -23 -6 -32 -4 -43 10 -17 25 -17 55 2 55 17 0 20 16 5 25
+                    -16 10 -12 65 5 65 8 0 32 9 52 20 21 11 43 20 48 20 16 0 10 75 -10 116 -21
+                    45 -14 68 19 60 15 -4 28 0 36 9 13 16 4 20 -29 15 -15 -2 -31 17 -31 38 0 6
+                    6 12 13 12 8 0 24 11 37 25 13 14 34 25 46 25 17 0 25 10 38 47 20 58 20 61
+                    -1 59 -13 -1 -19 8 -21 32 -2 18 -10 36 -18 39 -8 3 -14 14 -14 24 0 15 -7 19
+                    -36 19 -33 0 -36 2 -30 23 5 20 -1 26 -30 40 -19 10 -40 15 -45 11 -5 -3 -19
+                    6 -30 20 -12 15 -32 26 -52 28 -29 3 -32 6 -35 41 -3 32 -7 37 -28 37 -17 0
+                    -24 5 -24 20 0 11 -4 20 -10 20 -19 0 -50 40 -50 65 0 14 5 25 10 25 15 0 12
+                    46 -4 59 -10 9 -15 8 -20 -4 -6 -17 -46 -21 -46 -4 0 6 -11 20 -25 31 -28 22
+                    -32 54 -10 85 13 19 13 23 1 30 -7 4 -15 16 -17 26 -6 29 -23 25 -40 -10 -11
+                    -23 -19 -29 -30 -22 -8 5 -28 9 -45 9 -22 0 -33 6 -37 19 -6 25 -58 37 -73 17
+                    -14 -20 -24 -20 -24 -2 0 7 -11 21 -25 30 -14 9 -25 23 -25 32 0 11 -7 14 -33
+                    9 -25 -5 -37 -2 -51 14 -23 25 -30 26 -45 7z" id="node1" class="node"></path>
+                        </g>
+                        <g transform="translate(0.000000,215.000000) scale(0.100000,-0.100000)" stroke="none">
+
+                        </g>
+                    </svg>
+                </mat-icon>
+                <span class="spb">gujarat</span>
+            </button></a>
+        <mat-divider></mat-divider>
+
+        <div *ngIf="dsdta" class="weatherdata" routerLink="weather">
+            <img width="35px" height="35px" class="imgdata" src="../assets/images/sun1212.png" alt="">
+            <span class=" citys" style="color: rgb(255, 255, 255, 0.6);">Surendranagar</span>
+            <h2 class="temph" style="color: rgb(255, 255, 255, 0.6);">{{(dsdta - 274.15).toFixed(0)}}°C</h2>
+        </div>
+    </mat-drawer>
+
+    <div class="example-sidenav-content animate__animated animate__slideInDown" [class]="hn ? 'snav' : 'hnav'">
+        <button type="button" mat-button (click)="drawer.toggle()" class="drawer-btn animate__animated animate__zoomIn">
+            <mat-icon *ngIf="!drawer.opened" class="tgbtn">
+                <i class="fal fa-cheeseburger open"></i>
+
+            </mat-icon>
+            <mat-icon *ngIf="drawer.opened">
+                <i class="far fa-window-close close"></i>
+            </mat-icon>
+        </button>
+        <!--<div (click)="toggle()"></div>
+             <div *ngIf="show"></div>-->
+        <ul>
+            <li class="nav-link animate__animated animate__bounceInDown"><a class="ancer " routerLink="home">HOME</a>
+            </li>
+            <li class="nav-link animate__animated animate__bounceInDown"><a class="ancer "
+                    routerLink="technews">Technology</a></li>
+            <li class="nav-link animate__animated animate__bounceInDown"><a class="ancer "
+                    routerLink="business">business</a></li>
+            <li class="nav-link animate__animated animate__bounceInDown"><a class="ancer "
+                    routerLink="category">Category</a></li>
+            <li class="nav-link animate__animated animate__bounceInDown"><a class="ancer "
+                    routerLink="gujarat">Gujarat</a></li>
+            <li class="nav-link animate__animated animate__bounceInDown"><a class="ancer " routerLink="Login">Login</a>
+            </li>
+            <a class="logout animate__animated animate__bounceInDown " target="_top" (click)=" logout()"> <img
+                    src="../assets/images/icons8-logout-48.png" alt=""><span class="span">Logout</span></a>
+        </ul>
+
+        <button class="hideenlog" (click)="onhidden()">
+            <svg aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24">
+                <path
+                    d="M2 6.5A4.5 4.5 0 0 1 6.5 2h11a4.5 4.5 0 1 1 0 9h-11A4.5 4.5 0 0 1 2 6.5Zm4.5 2a2 2 0 1 0 0-4a2 2 0 0 0 0 4Zm0 4.5a4.5 4.5 0 1 0 0 9h11a4.5 4.5 0 1 0 0-9h-11Zm13 4.5a2 2 0 1 1-4 0a2 2 0 0 1 4 0Z" />
+            </svg>
+        </button>
+        <div class="hcon animate__animated animate__bounceInRight animate__delay-1000ms" *ngIf="isHidden!">
+            <a class="divlogout animate__animated animate__bounceInDown animate__delay-1s" target="_top"
+                (click)=" logout()"> <img src="../assets/images/icons8-logout-48.png" alt=""><span
+                    class="span">Logout</span></a>
+            <button class="notch divlogout animate__animated animate__bounceInDown animate__delay-2s"><a class="ancer "
+                    routerLink="Login">🔏 Login</a></button>
+        </div>
+
+    </div>
+
+
+    <content>
+        <router-outlet>
+        </router-outlet>
+    </content>
+
+</mat-drawer-container>
+<app-footer></app-footer>

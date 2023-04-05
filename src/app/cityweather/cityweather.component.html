@@ -1,0 +1,77 @@
+<div class="datagg" style="height:100%; width:100%;" *ngIf="!weather">
+    <div class="seccon404">
+        <div class="errortxt">
+          <h1 class="err404">404-Error</h1>
+        </div>
+          <div class="container-fluid ginrcon">
+            <img class="img-fluid" style="height: 100%; width:100%;" src="https://static.wixstatic.com/media/a27d24_16bbdb1ff1594bb6bc7f5649f07c1781~mv2.gif/v1/fit/w_800%2Ch_600%2Cal_c%2Cq_80,enc_auto/file.gif" alt="">
+          </div>
+        <div class="pgerr">
+          <h1 class="pg404">Data Not Found!</h1>
+          <div class="loader-line"></div>
+          <button mat-button class="goback" (click)="goback()" >Go Back</button>
+        </div>
+      </div>
+</div>
+
+<div class="overlay ">
+    <div class="mode animate__animated animate__zoomIn">
+        <mat-slide-toggle>Mode</mat-slide-toggle>
+        <p></p>
+        <div class="container">
+
+            <div class="frist">
+                <div class="img-data" *ngIf="weather">
+                    <img class="same" src="../../assets/images/sunrise-207247.jpg" alt="" *ngIf="weather.main.temp > 15">
+                    <img class="same" src="../../assets/images/sunset-417074.jpg" alt="" *ngIf="weather.main.temp <= 288.15">
+                </div>
+            </div>
+            <div class="search">
+
+                <form #form="ngForm" class="back" (submit)="onsubmit()">
+                    <mat-form-field>
+                        <input matInput placeholder="Location" name="city" [(ngModel)]="cityname" />
+                    </mat-form-field>
+                </form>
+
+            </div>
+
+            <div class="innercontainer " *ngIf="weather">
+                <div class="wdata">
+                    <div class="citydate">
+                        <div class="location">{{weather.name}}</div>
+                        <span class="datec">{{currentdate | date:'dd/MM/yyyy'}}</span>
+                    </div>
+                    <div class="temperature"> Temperature <img class="temicon" src="../../assets/images/temperatures.png" alt=""> {{(weather.main.temp - 274.15).toFixed(0)}}°C <span class="wdcenter">{{weather.weather[0].description}}</span></div>
+                </div>
+                <div class="lower-data">
+                    <div class="more-info">
+                        OTHER INFO...
+                    </div>
+                    <div class="info-block">
+                        <div class="info-value">
+                            <div class="infcom">Min Tem <img class="temicon" src="../../assets/images/min-temp.png" alt=""> <span>{{(weather.main.temp_min - 274.15).toFixed(0)}}°C</span></div>
+                        </div>
+                        <div class="info-value">
+                            <div class="infcom">Max Tem <img class="temicon" src="../../assets/images/temp-max.png" alt=""> <span>{{(weather.main.temp_max - 274.15).toFixed(0)}}°C</span></div>
+                        </div>
+                        <div class="info-value">
+                            <div class="infcom">Humidity <img class="temicon" src="../../assets/images/humidity.png" alt=""> <span>{{weather.main.humidity - 8}}%</span></div>
+                        </div>
+                        <div class="info-value">
+
+                            <div class="infcom">speed <img class="temicon bg-dark" src="../../assets/images/wind.png" alt=""> <span>{{weather.wind.speed}} km/h</span></div>
+                        </div>
+                        <div class="info-value">
+
+                            <div class="infcom">pressure <img class="temicon" src="../../assets/images/newdeg.png" alt=""> <span>{{(weather.main.pressure).toFixed(0) }} mb</span></div>
+                        </div>
+                        <div class="info-value">
+                            <div class="infcom"> gust <img class="temicon" src="../../assets/images/newgust.png" alt=""> <span>{{(weather.wind.gust + 31).toFixed(0)}}km</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

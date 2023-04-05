@@ -1,0 +1,295 @@
+<div class="datagg" style="height:100%; width:100%;" *ngIf="Surendranagarn=='' && Mulin=='' && Ahemdabadn=='' && Drangdhran=='' && Halvadn=='' && Morbin=='' && Rajkotn=='' && Vadodaran==''">
+  <div class="seccon404">
+      <div class="errortxt">
+        <h1 class="err404">404-Error</h1>
+      </div>
+        <div class="container-fluid ginrcon">
+          <img class="img-fluid" style="height: 100%; width:100%;" src="https://static.wixstatic.com/media/a27d24_16bbdb1ff1594bb6bc7f5649f07c1781~mv2.gif/v1/fit/w_800%2Ch_600%2Cal_c%2Cq_80,enc_auto/file.gif" alt="">
+        </div>
+      <div class="pgerr">
+        <h1 class="pg404">Data Not Found!</h1>
+        <div class="loader-line"></div>
+        <button mat-button class="goback" (click)="goback()" >Go Back</button>
+      </div>
+    </div>
+</div>
+
+
+<div class="tabtg" *ngIf="(merr && serr)==true || (dherr && haerr)==true || (moerr && rerr)==true && (verr && allerror)==true">
+  <div class="itstg animate__animated" [ngClass]="sht ? 'animate__bounceIn' : 'animate__bounce' "  >
+      <button mat-icon-button (click)="shbtn()">
+          <div class="anii" [ngClass]="sht ? 'd-none' : 'anii'"></div>
+          <i class="fa-solid fa-xmark xanii" [ngClass]="sht ? 'xanii' : 'd-none'"></i>
+      </button>
+  </div>
+  
+<div class="tabs-box" [ngClass]="sht ? 'tabsshow' : 'tabshide'" >
+  <button mat-icon-button class="tabshome" (click)="tabsnav1()">
+      <i class="fas fa-house-damage tabsicon"></i>
+    </button>
+  <button mat-icon-button class="tabsbtn snavbs" (click)="scroll(target)">
+      <span class="scroll">scroll</span>
+      <i class="fa-brands fa-autoprefixer tabsi"></i>
+  </button>
+</div>
+</div>
+
+<div class="hnblacks tbhsn" [ngClass]="hnblack ? 'isrotedh' : 'hnblacks'" *ngIf="(merr && serr)==true || (dherr && haerr)==true || (moerr && rerr)==true && (verr && allerror)==true" >
+  <span class="tabssbxsn">More-Tabs</span>
+  <button mat-icon-button class="hnactbtn tbhsn " (click)="hieghtb()">
+    <i class="fa-solid  xcross" [ngClass]="hnblack ? 'fa-xmark' : 'fa-clone'"></i>
+</button>
+</div>
+
+<div class="container-fluid  animate__animated animate__zoomIn" [ngClass]="hnblack ? 'navca' : 'd-none'">
+  <div class="row rmain ">
+    <div class="mtabs">
+      <div class="tbitems">
+        <div class="tbinitems tbi1" id="Surendranagar" *ngIf="serr==true" (click)="tabschange('Surendranagar')">Surendranagar</div>
+        <div class="tbinitems tbi1" id="Muli" *ngIf="merr==true" (click)="tabschange('Muli')"> Muli </div>
+        <div class="tbinitems tbi2" id="Ahemdabad" *ngIf="aherror==true" (click)="tabschange('Ahemdabad')">Ahemdabad</div>
+        <div class="tbinitems tbi2" id="Drangdhra" *ngIf="dherr==true"  (click)="tabschange('Drangdhra')">Dhrangdhra</div>
+        
+        <div class="tbinitems tbi2" id="Halvad" *ngIf="haerr==true" (click)="tabschange('Halvad')">Halvad</div>
+        <div class="tbinitems tbi3" id="Morbi" *ngIf="moerr==true" (click)="tabschange('Morbi')"> Morbi</div>
+        <div class="tbinitems tbi4" id="Rajkot" *ngIf="rerr==true" (click)="tabschange('Rajkot')"> Rajkot</div>
+        <div class="tbinitems tbi4" id="Vadodara" *ngIf="verr==true" (click)="tabschange('Vadodara')"> Vadodara</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section" #target id="target">
+  <div class="seccont" *ngIf="id=='Surendranagar' " >
+    <div class="row rmain">
+      <div *ngFor="let newdata of Surendranagarn;let i = index" class="col-lg-3  col-md-6 col-lg-2 tpheading">
+        <div class="atbg animate__animated animate__flipInX">
+         
+           <div class="bg">
+            <div class="mcimage">
+              <div class="mystyle" id="mystyle">
+              </div>
+              <ng-container *ngIf="newdata.content; else elseNotDone">
+                <img src="{{newdata.content.aurl}}" id="notfound" class="mcimage ">
+              </ng-container>
+              <ng-template #elseNotDone>
+                <img src="../../assets/tv.png" id="notfound" class="mcimage ">
+              </ng-template>
+            </div>
+            <div class="box" *ngIf="newdata.title">
+              <h2 class="hero mb-3">{{newdata.title}}</h2>
+              <p class="description mb-3">{{newdata.pubDate}}</p>
+              <div style="text-align: center;">
+                <button mat-raised-button class=" lbtn" color="primary"> <a href="{{newdata.link[0]}}" type="submit"
+                    target="_blank" class="text-center"><i class="fas fa-atlas"> </i><span>Read more</span></a></button>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccont" *ngIf="id=='Muli' " >
+    <div class="row rmain">
+      <div *ngFor="let newdata of Mulin;let i = index" class="col-lg-3  col-md-6 col-lg-2 tpheading">
+        <div class="atbg animate__animated animate__flipInX">
+          <div class="bg">
+            <div class="mcimage">
+              <div class="mystyle" id="mystyle">
+              </div>
+              <ng-container *ngIf="newdata.content; else elseNotDone">
+                <img src="{{newdata.content.aurl}}" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-container>
+              <ng-template #elseNotDone>
+                <img src="../../assets/tv.png" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-template>
+            </div>
+            <div class="box" *ngIf="newdata.title">
+              <h2 class="hero mb-3">{{newdata.title}}</h2>
+              <p class="description mb-3">{{newdata.pubDate}}</p>
+              <div style="text-align: center;">
+                <button mat-raised-button class=" lbtn" color="primary"> <a href="{{newdata.link[0]}}" type="submit"
+                    target="_blank" class="text-center"><i class="fas fa-atlas"> </i><span>Read more</span></a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccont" *ngIf="id=='Ahemdabad' " >
+    <div class="row rmain">
+      <div *ngFor="let newdata of Ahemdabadn;let i = index" class="col-lg-3  col-md-6 col-lg-2 tpheading">
+        <div class="atbg animate__animated animate__flipInX">
+          <div class="bg">
+            <div class="mcimage">
+              <div class="mystyle" id="mystyle">
+              </div>
+              <ng-container *ngIf="newdata.content; else elseNotDone">
+                <img src="{{newdata.content.aurl}}" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-container>
+              <ng-template #elseNotDone>
+                <img src="../../assets/tv.png" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-template>
+            </div>
+            <div class="box" *ngIf="newdata.title">
+              <h2 class="hero mb-3">{{newdata.title}}</h2>
+              <p class="description mb-3">{{newdata.pubDate}}</p>
+              <div style="text-align: center;">
+                <button mat-raised-button class=" lbtn" color="primary"> <a href="{{newdata.link[0]}}" type="submit"
+                    target="_blank" class="text-center"><i class="fas fa-atlas"> </i><span>Read more</span></a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccont" *ngIf="id=='Drangdhra' " >
+    <div class="row rmain">
+      <div *ngFor="let newdata of Drangdhran;let i = index" class="col-lg-3  col-md-6 col-lg-2 tpheading">
+        <div class="atbg animate__animated animate__flipInX">
+          <div class="bg">
+            <div class="mcimage">
+              <div class="mystyle" id="mystyle">
+              </div>
+              <ng-container *ngIf="newdata.content; else elseNotDone">
+                <img src="{{newdata.content.aurl}}" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-container>
+              <ng-template #elseNotDone>
+                <img src="../../assets/tv.png" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-template>
+            </div>
+            <div class="box" *ngIf="newdata.title">
+              <h2 class="hero mb-3">{{newdata.title}}</h2>
+              <p class="description mb-3">{{newdata.pubDate}}</p>
+              <div style="text-align: center;">
+                <button mat-raised-button class=" lbtn" color="primary"> <a href="{{newdata.link[0]}}" type="submit"
+                    target="_blank" class="text-center"><i class="fas fa-atlas"> </i><span>Read more</span></a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccont" *ngIf="id=='Halvad' " >
+    <div class="row rmain">
+      <div *ngFor="let newdata of Halvadn;let i = index" class="col-lg-3  col-md-6 col-lg-2 tpheading">
+        <div class="atbg animate__animated animate__flipInX">
+          <div class="bg">
+            <div class="mcimage">
+              <div class="mystyle" id="mystyle">
+              </div>
+              <ng-container *ngIf="newdata.content; else elseNotDone">
+                <img src="{{newdata.content.aurl}}" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-container>
+              <ng-template #elseNotDone>
+                <img src="../../assets/tv.png" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-template>
+            </div>
+            <div class="box" *ngIf="newdata.title">
+              <h2 class="hero mb-3">{{newdata.title}}</h2>
+              <p class="description mb-3">{{newdata.pubDate}}</p>
+              <div style="text-align: center;">
+                <button mat-raised-button class=" lbtn" color="primary"> <a href="{{newdata.link[0]}}" type="submit"
+                    target="_blank" class="text-center"><i class="fas fa-atlas"> </i><span>Read more</span></a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccont" *ngIf="id=='Morbi' " >
+    <div class="row rmain">
+      <div *ngFor="let newdata of Morbin;let i = index" class="col-lg-3  col-md-6 col-lg-2 tpheading">
+        <div class="atbg animate__animated animate__flipInX">
+          <div class="bg">
+            <div class="mcimage">
+              <div class="mystyle" id="mystyle">
+              </div>
+              <ng-container *ngIf="newdata.content; else elseNotDone">
+                <img src="{{newdata.content.aurl}}" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-container>
+              <ng-template #elseNotDone>
+                <img src="../../assets/tv.png" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-template>
+            </div>
+            <div class="box" *ngIf="newdata.title">
+              <h2 class="hero mb-3">{{newdata.title}}</h2>
+              <p class="description mb-3">{{newdata.pubDate}}</p>
+              <div style="text-align: center;">
+                <button mat-raised-button class=" lbtn" color="primary"> <a href="{{newdata.link[0]}}" type="submit"
+                    target="_blank" class="text-center"><i class="fas fa-atlas"> </i><span>Read more</span></a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccont" *ngIf="id=='Rajkot' " >
+    <div class="row rmain">
+      <div *ngFor="let newdata of Rajkotn;let i = index" class="col-lg-3  col-md-6 col-lg-2 tpheading">
+        <div class="atbg animate__animated animate__flipInX">
+          <div class="bg">
+            <div class="mcimage">
+              <div class="mystyle" id="mystyle">
+              </div>
+              <ng-container *ngIf="newdata.content; else elseNotDone">
+                <img src="{{newdata.content.aurl}}" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-container>
+              <ng-template #elseNotDone>
+                <img src="../../assets/tv.png" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-template>
+            </div>
+            <div class="box" *ngIf="newdata.title">
+              <h2 class="hero mb-3">{{newdata.title}}</h2>
+              <p class="description mb-3">{{newdata.pubDate}}</p>
+              <div style="text-align: center;">
+                <button mat-raised-button class=" lbtn" color="primary"> <a href="{{newdata.link[0]}}" type="submit"
+                    target="_blank" class="text-center"><i class="fas fa-atlas"> </i><span>Read more</span></a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccont" *ngIf="id=='Vadodara' " >
+    <div class="row rmain">
+      <div *ngFor="let newdata of Vadodaran;let i = index" class="col-lg-3  col-md-6 col-lg-2 tpheading">
+        <div class="atbg animate__animated animate__flipInX">
+          <div class="bg">
+            <div class="mcimage">
+              <div class="mystyle" id="mystyle">
+              </div>
+              <ng-container *ngIf="newdata.content; else elseNotDone">
+                <img src="{{newdata.content.aurl}}" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-container>
+              <ng-template #elseNotDone>
+                <img src="../../assets/tv.png" id="notfound" class="cimage " height="100%" width="100%">
+              </ng-template>
+            </div>
+            <div class="box" *ngIf="newdata.title">
+              <h2 class="hero mb-3">{{newdata.title}}</h2>
+              <p class="description mb-3">{{newdata.pubDate}}</p>
+              <div style="text-align: center;">
+                <button mat-raised-button class=" lbtn" color="primary"> <a href="{{newdata.link[0]}}" type="submit"
+                    target="_blank" class="text-center"><i class="fas fa-atlas"> </i><span>Read more</span></a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

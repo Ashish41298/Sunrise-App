@@ -1,0 +1,135 @@
+<div class="datagg" style="height:100%; width:100%;" *ngIf="international=='' && national=='' && dvb=='' && nrgn==''">
+    <div class="seccon404">
+        <div class="errortxt">
+          <h1 class="err404">404-Error</h1>
+        </div>
+          <div class="container-fluid ginrcon">
+            <img class="img-fluid" style="height: 100%; width:100%;" src="https://static.wixstatic.com/media/a27d24_16bbdb1ff1594bb6bc7f5649f07c1781~mv2.gif/v1/fit/w_800%2Ch_600%2Cal_c%2Cq_80,enc_auto/file.gif" alt="">
+          </div>
+        <div class="pgerr">
+          <h1 class="pg404">Data Not Found!</h1>
+          <div class="loader-line"></div>
+          <button mat-button class="goback" (click)="goback()" >Go Back</button>
+        </div>
+      </div>
+</div>
+
+
+<div class="tabtg" *ngIf="(nerror && nationalerror && dvberr && nrgnerr)==true">
+    <div class="itstg animate__animated" [ngClass]="sht ? 'animate__bounceIn' : 'animate__bounce' "  >
+        <button mat-icon-button (click)="shbtn()">
+            <div class="anii" [ngClass]="sht ? 'd-none' : 'anii'"></div>
+            <i class="fa-solid fa-xmark xanii" [ngClass]="sht ? 'xanii' : 'd-none'"></i>
+        </button>
+    </div>
+<div class="tabs-box" [ngClass]="sht ? 'tabsshow' : 'tabshide'">
+    <button mat-icon-button class="tabsbtn snavbs" (click)="scroll(target)">
+        <span class="scroll">scroll</span>
+        <i class="fa-brands fa-autoprefixer tabsi"></i>
+    </button>
+    <button mat-icon-button class="tabsbtn ddpp" (click)="tabsnav2()">
+        <span class="scroll">tabs</span>
+        <i class="fa-solid fa-clone tabsi"></i>
+    </button>
+</div>
+</div>
+<div class="container-fluid topdown" #target id="target">
+    <section id="international" class="consecf asec">
+        <div class="newsi" *ngIf="nerror==true">International</div>
+        <div class="row rmain">
+            <div *ngFor="let newdata of international" class="col-lg-3  col-md-6 col-lg-2 samehw">
+
+                <div class="card animate__animated animate__flipInX">
+                    <div class="imgcon">
+                        <button mat-raised-button class="hlbn" color="primary"><a class="linksbtns"
+                                href="{{newdata.link[0]}}" target="_blank"><i
+                                    class="fab fa-battle-net"></i></a></button>
+                        <ng-container *ngIf="newdata.content; else elseNotDone">
+                            <img src="{{newdata.content.aurl}}" id="notfound" class="cimage " height="100%"
+                                width="100%">
+                        </ng-container>
+                        <ng-template #elseNotDone>
+                            <img src="../../assets/tv.png" id="notfound" class="cimage " height="100%" width="100%">
+                        </ng-template>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="hero ">{{newdata.title}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="national" class="consecs asec">
+        <div class="newsi" *ngIf="nationalerror==true">National</div>
+        <div class="row rmain">
+            <div *ngFor="let newdata of national" class="col-lg-3  col-md-6 col-lg-2 samehw">
+                <div class="card animate__animated animate__flipInX">
+                    <div class="imgcon">
+                        <button mat-raised-button class=" hlbn" color="primary"><a class="linksbtns"
+                                href="{{newdata.link[0]}}" target="_blank"><i
+                                    class="fab fa-battle-net"></i></a></button>
+                        <ng-container *ngIf="newdata.content; else elseNotDone">
+                            <img src="{{newdata.content.aurl}}" id="notfound" class="cimage " height="100%"
+                                width="100%">
+                        </ng-container>
+                        <ng-template #elseNotDone>
+                            <img src="../../assets/tv.png" id="notfound" class="cimage " height="100%" width="100%">
+                        </ng-template>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="hero ">{{newdata.title}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="dvb" class="consect asec">
+        <div class="newsi" *ngIf="dvberr==true">Dvb</div>
+        <div class="row rmain">
+            <div *ngFor="let newdata of dvb" class="col-lg-3  col-md-6 col-lg-2 samehw">
+                <div class="card animate__animated animate__flipInX">
+                    <div class="imgcon">
+                        <button mat-raised-button class=" hlbn" color="primary"><a class="linksbtns"
+                                href="{{newdata.link[0]}}" target="_blank"><i
+                                    class="fab fa-battle-net"></i></a></button>
+                        <ng-container *ngIf="newdata.content; else elseNotDone">
+                            <img src="{{newdata.content.aurl}}" id="notfound" class="cimage " height="100%"
+                                width="100%">
+                        </ng-container>
+                        <ng-template #elseNotDone>
+                            <img src="../../assets/tv.png" id="notfound" class="cimage " height="100%" width="100%">
+                        </ng-template>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="hero ">{{newdata.title}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="nrg" class="consecfo asec">
+        <div class="newsi" *ngIf="nrgnerr==true">Nrg</div>
+        <div class="row rmain">
+            <div id="nrgs" *ngFor="let newdata of nrgn" class="col-lg-3  col-md-6 col-lg-2 samehw">
+                <div class="card animate__animated animate__flipInX">
+                    <div class="imgcon">
+                        <button mat-raised-button class=" hlbn" color="primary"><a class="linksbtns"
+                                href="{{newdata.link[0]}}" target="_blank"><i
+                                    class="fab fa-battle-net"></i></a></button>
+                        <ng-container *ngIf="newdata.content; else elseNotDone">
+                            <img src="{{newdata.content.aurl}}" id="notfound" class="cimage " height="100%"
+                                width="100%">
+                        </ng-container>
+                        <ng-template #elseNotDone>
+                            <img src="../../assets/tv.png" id="notfound" class="cimage " height="100%" width="100%">
+                        </ng-template>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="hero ">{{newdata.title}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div> 

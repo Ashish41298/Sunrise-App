@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.chipsbg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background:rgb(255,255,255,0.24);
+    backdrop-filter: blur(2px);
+     background-size: 100% 100%, cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    z-index: -1;
+    opacity: 0;
+    transition: all 700ms ease-in;
+}
+
+::ng-deep .mat-chip-list-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top:80px !important;
+}
+mat-chip{
+  background-color: transparent !important;
+  width: 200px;
+  height: 90px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transition: 600ms ease-out;
+}
+    mat-chip:nth-child(1):hover ~ .chipsbg {
+    opacity: 1;
+     background-image: url('https://images.pexels.com/photos/10213104/pexels-photo-10213104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') !important; 
+    }
+    
+  mat-chip:nth-child(2):hover ~ .chipsbg{
+    background-image: url('https://images.pexels.com/photos/1161994/pexels-photo-1161994.jpeg?auto=compress&cs=tinysrgb&w=600') !important;
+    opacity: 1;
+  }
+  mat-chip:nth-child(3):hover ~ .chipsbg{
+    opacity: 1;
+     background-image: url('https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') !important; 
+  }
+  mat-chip:nth-child(4):hover ~ .chipsbg{
+    background-image: url('https://images.pexels.com/photos/4968639/pexels-photo-4968639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') !important;
+    opacity: 1;
+  }
+  mat-chip:nth-child(5):hover ~ .chipsbg{
+    background-image: url('https://images.pexels.com/photos/5878516/pexels-photo-5878516.jpeg?auto=compress&cs=tinysrgb&w=600') !important;
+    opacity: 1;
+  }
+  mat-chip:nth-child(6):hover ~ .chipsbg{
+    background-image: url('https://images.pexels.com/photos/2381596/pexels-photo-2381596.jpeg?auto=compress&cs=tinysrgb&w=600') !important;
+    opacity: 1;
+  }
+  mat-chip:nth-child(7):hover ~ .chipsbg{
+    background-image: url('https://images.pexels.com/photos/672630/pexels-photo-672630.jpeg?auto=compress&cs=tinysrgb&w=600') !important;
+    opacity: 1;
+  }
+  mat-chip:nth-child(8):hover ~ .chipsbg{
+    background-image: url('https://images.unsplash.com/photo-1508791290064-c27cc1ef7a9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80') !important;
+    opacity: 1;
+  }
+  ::ng-deep mat-chip:hover{
+    background: crimson !important;
+  }
+ .textc {
+    font-size: 17px;
+    color: white !important;
+    letter-spacing: 1.2px;
+  }
+  ::ng-deep .mat-standard-chip .mat-chip-avatar {
+    width: 35px !important;
+    height: 35px !important;
+}
+.overlay{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(238, 235, 235, 0.432);
+    backdrop-filter: blur(7px);
+    overflow: hidden;
+}
+.overlay::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: initial;
+  }
+  .mcon::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: initial;
+  }
+.mcon{
+    width: 700px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.473);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media (max-width:692px){
+  .mcon{
+    width: auto;
+    height: 500px;
+    position: relative;
+    top: 50%;
+    left: auto;
+    transform: translateY(-50%);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+mat-chip:nth-child(6){
+  width: auto;
+}
+mat-chip:nth-child(7){
+  width: auto;
+}
+mat-chip{
+  width: 150px;
+  height: 90px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.textc {
+  font-size: 14px;
+  color: white !important;
+  letter-spacing: 1.2px;
+}
+::ng-deep .mat-standard-chip .mat-chip-avatar {
+  width: 30px !important;
+  height: 30px !important;
+}
+}
+/* @media (max-width:498px){
+  ::ng-deep .mat-chip-list-wrapper {
+     margin-top:30px !important;
+  }
+} */
+@media (max-width: 498) and (min-width: 331px) {
+  ::ng-deep .mat-chip-list-wrapper {
+    margin-top:500px !important;
+ }
+}
+@media (max-width:496px){
+  .overlay {
+    height: 100%;
+  }
+  ::ng-deep .mat-chip-list-wrapper {
+    margin-top:10px !important;
+  }
+}
+@media (max-width:430px){
+  .mcon{
+    height: 420px;
+}
+}
+@media (max-width:450px){
+ .mcon{
+  overflow: scroll;
+ }
+}
+
+@media (max-width:347px){
+  ::ng-deep .mat-chip-list-wrapper {
+    margin-top:25px !important;
+  }
+  mat-chip{
+    width: 140px;
+    height: 70px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  }
+}
+@media (max-width:342){
+  .mcon{
+    width: auto;
+    height: auto;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+mat-chip{
+  width: 150px;
+  height: 10px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+mat-chip:nth-child(7){
+  width: auto;
+}
+.textc {
+  font-size: 13px;
+  color: white !important;
+  letter-spacing: 1.2px;
+}
+::ng-deep .mat-standard-chip .mat-chip-avatar {
+  width: 25px !important;
+  height: 25px !important;
+}
+}
+@media (max-width:333px){
+  .mcon{
+    width: auto;
+    height: auto;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+::ng-deep .mat-chip-list-wrapper {
+  margin-top:5px !important;
+  margin-bottom:5px !important;
+}
+mat-chip{
+  width: 150px;
+  height: 40px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+mat-chip:nth-child(7){
+  width: auto;
+}
+.textc {
+  font-size: 13px;
+  color: white !important;
+  letter-spacing: 1.2px;
+}
+::ng-deep .mat-standard-chip .mat-chip-avatar {
+  width: 25px !important;
+  height: 25px !important;
+}
+}
+@media screen and (max-width:320px), screen and (max-height:568px){
+  .chipsbg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+   height: 410px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+  .mcon{
+    width: auto;
+    top: 55%;
+    height: 320px;
+    margin: 0px 7px 0px 7px;
+    overflow: scroll;
+}
+}

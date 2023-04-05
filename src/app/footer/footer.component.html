@@ -1,0 +1,58 @@
+
+<div class="qrmain">
+<ng-template #dialogRef let-mydata class="qrcon">
+  <div class="logo animate__animated  animate__backInDown">
+    <img src="../../assets/images/sun1212.png" alt="">
+  </div>
+  <h3 class="apptitle animate__animated animate__bounceIn">Sunrise App</h3>
+  <div class="imgcon  animate__animated animate__flip">
+    <img src="../../assets/images/Donation-QR.jpg" alt="">
+  </div>
+  <h5 class="discription animate__animated animate__zoomInUp">
+    * You are Donate with QR code and it's Secure way *
+    <br>
+    Thise site is just testing purpose This way you can donate small Amount thanks! for visiting the site.
+  </h5>
+  <button mat-button mat-dialog-close="I am from dialog land..." class="close animate__animated animate__slideInUp"><i class="fa-solid fa-circle-xmark"></i></button>
+</ng-template>
+</div>
+<footer class="site-footer" *ngIf="loaddt === true">
+   
+    <div class="row rmain">
+        <div class="col-sm-12 col-md-4 allcon dicon">
+            <h6 class="text-center">About</h6>
+            <p class="text-justify ptextc">sunrie-app <i>is for front-end development purposes.</i> This site copies all the newses from other platforms. And created individual web APIs using the Git-Hub page. It helps you to see the daily news of this site.
+            </p>
+            
+        </div>
+        <div class="col-md-4 col-sm-12 msgform allcon" >
+            <h6 class="text-center d-flex">COMMENTS</h6>
+            <form [formGroup]="msgform" (ngSubmit)="submit()" class="forms">
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email" />
+                </mat-form-field>
+                <button mat-button class="aoutline" [disabled]="msgform.invalid">
+                    submit
+                </button>
+            </form>
+            <h6 style="display: none;" name="Photo" class="img" #Photo>
+                hello
+            </h6>
+        </div>
+
+        <div class="col-md-4 col-sm-12 allcon dcon">
+            <h6 class="text-center">DONATION</h6>
+            <div class="section" style="float: center; ">
+              <h3 class="h3textc">I'm not using the any getway's but its still secure google pay QR code</h3>
+                <button class="donbnp" mat-button (click)="openTempDialog()">Donation</button>
+            </div>
+        </div>
+    </div>
+
+    <hr class="copyr" style="width: 100%; color: white; margin-top: 20px;">
+    <div class="copyr">
+        <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
+            <a href="#">Sunrise App</a>.
+        </p>
+    </div>
+</footer>

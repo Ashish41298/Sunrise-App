@@ -1,0 +1,109 @@
+
+<div class="mcon">
+<div class="container">
+    <div class="row  animconex">
+        <div class="Escape">hello! user</div> 
+<div class="panim"> 
+  <span>write down your experiance</span>
+</div>
+
+    </div>
+</div>
+<div class="container mt-1 secom">
+    <div class="row mtcomment">
+        <div class="col-md-12">
+            <div class="card" *ngIf="user$ | async as user">
+                    <img class="avatar" [src]="user.photoURL ?? 'https://img.icons8.com/bubbles/100/000000/groups.png'" />
+                <div class="name">
+                   <h2 class="ntcenter"><span class="pngtl"><img src="../../assets/images/titledesign.png" alt="" style="height: 100%;width:100%;"></span>{{user.displayName}}<span class="pngtr"><img src="../../assets/images/titledesign.png"  style="height: 100%;width:100%;" alt=""></span></h2>
+                    <!-- <h3 class="times">{{currentDateTime}}</h3> -->
+                </div>
+                <div class="usercomment">
+                    <form [formGroup]="commentsu">
+                        <textarea placeholder=" comments..." formControlName="comments" [(ngModel)]="emojies" (blur)="onBlur()" (focus)="onFocus()" >
+                        </textarea>
+                    </form>          
+                </div>
+                
+                <div class="addbtn mb-3">
+                    
+                     <button class="emojibtn animate__animated animate__flip" #emoji mat-icon-button (click) ="toggleEmojiPicker()" ><i class="fa-regular " [ngClass]="showEmojiPicker? 'fa-face-grin-tears' : 'fa-face-grin-hearts'"></i>
+                    </button>
+                    
+                    <button class="sent" mat-icon-button  [disabled]="commentsu.invalid" (click)="clickEvent()"> 
+                    <i class="fa-solid fa-paper-plane senticon"></i>
+                    </button>
+
+                <button class="refreshi animate__animated animate__rotateIn" mat-icon-button (click)="resetcbox()"> 
+                    <i class="fas fa-sync synci"></i>
+                    </button>
+                </div>
+            </div>
+            <emoji-mart class="emoji-mart"  *ngIf="showEmojiPicker" (emojiSelect)="addEmoji($event)" title="Pick your emoji…" set=twitter ></emoji-mart>
+<!------------------------masuser comments--------------------------->
+            <div class="card" *ngIf="msname">
+                 <img class="avatar" src="../../../assets/images/user-icon-modified.png" /> 
+            <div class="name">
+                 <h2 class="ntcenter"><span class="pngtl"><img src="../../assets/images/titledesign.png" alt="" style="height: 100%;width:100%;"></span>{{acc.displayName}}<span class="pngtr"><img src="../../assets/images/titledesign.png"  style="height: 100%;width:100%;" alt=""></span></h2>
+            </div>
+            <div class="usercomment">
+                <form [formGroup]="commentsu">
+                    <textarea placeholder=" comments..." formControlName="comments" [(ngModel)]="emojies" (blur)="onBlur()" (focus)="onFocus()"> 
+                    </textarea>
+                </form>
+                
+            </div>
+            
+            <div class="addbtn mb-3">
+
+                <button class="emojibtn animate__animated animate__flip" #emoji mat-icon-button (click) ="toggleEmojiPicker()" ><i class="fa-regular " [ngClass]="showEmojiPicker? 'fa-face-grin-tears' : 'fa-face-grin-hearts'"></i>
+                </button>
+                
+                <button class="sent" mat-icon-button color="primary" [disabled]="commentsu.invalid" (click)="clickEvent()"> <i class="fa-solid fa-paper-plane senticon"></i>
+                    </button>
+
+                    <button class="refreshi animate__animated animate__rotateIn" mat-icon-button (click)="resetcbox()"> 
+                        <i class="fas fa-sync synci"></i>
+                        </button>
+            </div>
+        </div> 
+
+        </div>
+        <div class="col-md-12 reversc">
+            <div class="card " *ngFor="let notiuser of notification; index as i" >
+                <img class="avatar" [src]="notiuser.photoURL ?? 'https://img.icons8.com/bubbles/100/000000/groups.png'" />
+            <div class="name">
+                <h2 class="uname">{{notiuser.displayName}}</h2>
+                <h3 class="times">{{notiuser.currentDateTime}}</h3>
+            </div>
+            <div class="usercomment">
+                <div class="commwrap">
+                    <h3 class="realcomment">{{notiuser.comments}}</h3>
+                </div>
+            </div>
+            <div class="addbtn"> 
+                <button class="edit" mat-icon-button color="accent" *ngIf="this.notification[i].photoURL == this.alluser.photoURL" (click)="onedit(i)">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+                <button class="edit" mat-icon-button color="accent" *ngIf="this.notification[i].displayName == this.acc.displayName" (click)="onedit(i)">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+                
+                <mat-button-toggle disableRipple #likes (click)=" togglematli(likes, i)">
+                    <button class="autod animate__animated animate__jackInTheBox" mat-icon-button color="warn" [ngClass]="likes.checked? 'hanim' : 'animh'" >
+                          <i class=" fa-heart" [ngClass]="likes.checked? 'fa-solid' : 'fa-regular'"></i>
+                      </button>
+                  </mat-button-toggle> 
+                  
+                  <h5 class="lcount">{{notiuser.like}}</h5>
+        </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+  
+
+  

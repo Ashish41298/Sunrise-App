@@ -1,0 +1,65 @@
+<div class="main_con">
+
+    <div mat-align-tabs="center" class="tab_align">
+        <h1 class="heading" routerLink="/home">SIGN-UP</h1>
+        <div class="formcon">
+            <form [formGroup]="signUpForm" (ngSubmit)="submit()" class="animate__animated animate__zoomInUp ">
+                <div class="grida">
+                    <mat-form-field>
+                        <input matInput placeholder="Name" maxlength="15" size="15" formControlName="name" />
+                        <mat-error *ngIf="name?.errors?.['required']">
+                            Name is required
+                        </mat-error>
+                    
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput placeholder="Mobile No." formControlName="mobileno" />
+                        <mat-error *ngIf="name?.errors?.['required']">
+                            Mobile No. is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="fullw ">
+                    <mat-form-field>
+                        <input matInput placeholder="Email address" formControlName="email" />
+                        <mat-error *ngIf="email?.errors?.['required']">
+                            Email address is required
+                        </mat-error>
+                        <mat-error *ngIf="email?.errors?.['email']">
+                            Please enter a valid email address
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="grida">
+                    <mat-form-field>
+                        <input matInput [type]=" showPassword ? 'text' : 'password' " class="passice" placeholder="Password" formControlName="password" maxlength="17" />
+                        <span class="ice" (click)='showHidePassword()'><i class="fa-regular" [ngClass] ="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i> </span>
+                        <mat-error *ngIf="password?.errors?.['required']">
+                            Password is required
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input class="confield" matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" maxlength="17" />
+                        <mat-error *ngIf="confirmPassword?.errors?.['required']">
+                            This Is Required
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-error class="cssdd" *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+                        Pass Don't Match
+                    </mat-error>
+                </div>
+                <div class="center margin-top">
+                    <button type="submit" mat-button class="Signup_C">Submit</button>
+                    <button type="reset" mat-button class="Signup_C" (click)="reset()">Reset</button>
+                </div>
+            </form>
+
+
+        </div>
+        <div class="sugebox">
+            <span class="suggetions"> Go Back In <a class="sign-up-link" (click)="Forswitch()"> Login Form</a></span>
+            <span class="suggetions"> New User? <a class="sign-up-link" (click)="EditPro()"> Edit</a></span>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.imgcon{
+    width: 130px;
+    height: 130px;
+    margin: 2px auto;
+}
+.imgcon img{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    margin-top: -7px;
+}
+.qrmain{
+    position: relative;
+}
+.logo{
+    height: 40px;
+    width: 40px;
+    margin: -10px auto;
+    overflow: hidden;
+}
+.logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+} 
+.apptitle{
+    color: white;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: 'Macondo', cursive;
+    text-align: center;
+}
+.discription{
+    margin-top: 10px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+.close{
+    position: relative;
+    left: 50% !important;
+    transform: translate(-50%) !important;
+    top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    color: white;
+    background-color: rgb(71, 71, 71);
+    z-index: 1000;
+}
+
+.close i{
+    color: #fff;
+    font-size: 25px;
+    transition: 0.5s ease-in-out;
+    margin-top: -2.9px;
+}
+
+.close:hover i{
+    transform: rotate(120deg);
+ }
+::ng-deep .mat-dialog-container{
+    height: 450px !important;
+    width: 290px !important;
+    background: rgba(222, 239, 245, 0.5);
+    border-radius: 13px !important;
+    z-index: 100;
+    overflow: scroll;
+}
+::ng-deep .mat-dialog-container::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+}
+::ng-deep .cdk-overlay-container{
+    background: rgb(255, 255,255,0.2) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.site-footer {
+    position: static;
+    bottom:5%;
+    background-color: #26272b;
+    padding: 25px 20px 20px 20px;
+    font-size: 13px;
+    line-height: 24px;
+    color: #737373;
+    width: 100%;
+    overflow: hidden;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all 2s ease-in;
+}
+
+.msgform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 50px;
+    margin: 5px 15px 5px 15px;
+}
+
+.allcon {
+    height: auto;
+    padding: 10px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+.ptextc{
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0px 5px 0px !important;
+}
+.dicon {
+    margin-right: 15px;
+    width: 330px;
+}
+
+.dcon {
+    width: 330px;
+    margin-left: 15px;
+}
+
+.rmain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-footer h6 {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 2px
+}
+
+.aoutline {
+    color: rgb(204, 201, 201) !important;
+    padding: 0px 12px 0px 26px;
+    border: 1px solid rgba(19, 18, 18, 0.3);
+    transition: 600ms ease;
+    width: 2.5cm;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 13px;
+}
+.h3textc{
+    margin: 0 0 12px !important;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.form-control {
+    outline: none !important;
+    margin-bottom: 3px;
+    height: 10px;
+}
+
+textarea:active,
+textarea:focus {
+    outline: none !important;
+    -webkit-appearance: none;
+    box-shadow: none !important;
+    border: 1px solid transparent !important;
+    resize: both;
+}
+
+.aoutline:hover {
+    background: rgb(94, 92, 92);
+    color: #fff;
+}
+
+.outline {
+    color: white;
+    padding: 0px 12px 0px 12px;
+    border: 1px solid rgba(204, 188, 188, 0.3);
+    transition: 600ms ease;
+}
+
+.outline:hover {
+    color: #737373;
+    background: white;
+}
+
+.fieldwidth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-footer a {
+    color: #737373;
+}
+
+.footer-links.inline li {
+    display: inline-block
+}
+
+.site-footer .social-icons {
+    text-align: right
+}
+
+.fieldcenter {
+    float: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copyright-text{
+    margin: auto 2px;
+}
+.copyr{
+    text-align: center;
+    margin-top: 15px;
+}
+.qrcon{
+    margin: 20px auto;
+    height: 250px;
+    width: 160px;
+    border: 1.5px solid rgb(14, 12, 12,0.2);
+    padding: 2px;
+    overflow: scroll;
+}
+.forms{
+width: auto;
+background: transparent;
+border-radius: 15px;
+padding: 10px 10px 10px 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+mat-form-field {
+    width: 300px;
+    color: #fff !important;
+    font-size: 13px !important;
+    font-weight: 100;
+}
+
+ ::ng-deep.mat-form-field-label {
+    color: white !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    color: rgb(165, 164, 162) !important;
+    font-size: 16px !important;
+}
+ ::ng-deep.mat-form-field-underline {
+    background: rgb(0, 98, 128) !important;
+    height: 1.7px !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    background: linear-gradient(150deg, rgb(99, 98, 98), transparent, rgb(99, 98, 98));
+    height: 2.6px !important;
+}
+.donbnp{
+    padding: 5px 10px 5px 10px !important;
+    font-size: 13px;
+    font-weight: bolder;
+}
+ 
+@media (max-width:1080px) {
+    .dcon{
+        margin-left:-10px;
+        margin-top: 10px;
+    }
+}
+@media (max-width:991px) {
+    .aoutline{
+        margin-left:5px;
+    }
+    mat-form-field{
+        width: 425px;
+    }
+    .site-footer [class^=col-] {
+        margin-bottom: 20px;
+    }
+    .rmain {
+        width: 100%;
+    }
+    .allcon {
+        width: 100vW;
+        padding: 20px;
+        margin: 20px;
+        height: auto;
+    }
+    .forms{
+        padding: 20px 20px 20px 20px;
+    }
+}
+
+@media (max-width:767px) {
+    .site-footer {
+        padding-bottom: 0
+    }
+    .site-footer .copyright-text,
+    .site-footer .social-icons {
+        text-align: center
+    }
+    .forms{
+        padding: 20px 20px 20px 20px;
+    }
+    mat-form-field{
+        width: 385px;
+    }
+}
+
+@media (max-width:492px) {
+    .site-footer {
+        padding-bottom: 0;
+    }
+    .site-footer .copyright-text,
+    .site-footer .social-icons {
+        text-align: center
+    }
+    .forms{
+        padding: 20px 20px 20px 20px;
+    }
+    mat-form-field{
+        width: 250px;
+    }
+  
+    ::ng-deep .mat-dialog-container{
+        height: 500px !important;
+        width: 360px !important;
+    }
+    .discription{
+        margin-top: 20px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+    }
+     .close{
+        background: none !important;
+    } 
+}
+@media (max-width:390px){
+    ::ng-deep .mat-dialog-container{
+        width: 100% !important;
+        background: rgba(222, 239, 245, 0.5);
+        border-radius: 13px !important;
+        z-index: 100;
+        overflow: hidden;
+    }
+    .imgcon{
+        width: 100px;
+        height: 100px;
+        margin: 2px auto;
+    }
+    .imgcon img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    .close{
+        background: none !important;
+        margin-left: -5px;
+        margin-bottom: 60px !important;
+    } 
+    .forms{
+        padding: 20px 20px 20px 20px;
+    }
+    mat-form-field{
+        width: 170px;
+    }
+}
+@media (max-width:281px){
+    .close{
+        background: none !important;
+        margin-left: -10px;
+        margin-bottom: 60px !important;
+    } 
+}
+@media (max-height:1000px){
+    ::ng-deep .mat-dialog-container{
+        height: auto !important;
+    }
+}
+@media screen and (max-width:320px), screen and (max-height:568px){
+    ::ng-deep .mat-dialog-container{
+        height: 390px !important;
+    }
+}

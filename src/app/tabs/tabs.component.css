@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.hnblacks{
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translate(-50%);
+    background: #202023;
+    border-radius: 50px;
+    border: 5px solid;
+    border-top-color: lightgray;
+    border-bottom-color: lightgray;
+    transition:  100ms;
+    z-index: 10;
+}
+.gcross{
+    color: green;
+}
+.isrotedh{
+     border-top-color: #202023 !important;
+    border-bottom-color: #202023 !important;
+    border-left-color: lightgray;
+    border-right-color: lightgray; 
+    transition: all 0.5s ease-in;
+}
+.hnactbtn{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.xcross{
+    font-size: 20px;
+    color: dimgray;
+    position: relative;
+}
+.tabssbxsn{
+    position: absolute;
+    left: 70px;
+    height: 30px;
+    width: 110px;
+    background: #202023;
+    color: cornflowerblue;
+    visibility: hidden;
+    transition: 700ms;
+    opacity: 0;
+    font-size: 15px;
+    padding: 5px 19px;
+    margin-top: 6px;
+    border-radius: 7px;
+}
+.tbhsn:hover .tabssbxsn{
+    left: 50px;
+    opacity: 1;
+    visibility: visible;
+}
+.tabtg{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tabs-box{
+    height: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: -2px;
+    background: #202023;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tabsshow{
+  display: flex;
+  opacity: 1;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.tabshide{
+    opacity: 0;
+    display: none;
+}
+.tabsbtn {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tabshome{
+    height: 35px !important;
+    width: 35px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.tabsi{
+    margin-top: -2px !important;
+    font-size: 20px;
+    color: dimgray;
+}
+.tabsicon{
+    margin-top: 1px !important;
+    margin-left: -11px;
+    font-size: 20px !important;
+    color: dimgray !important;
+}
+
+.itstg{
+    position: relative;
+    background: #202023;
+    margin: -1px;
+    border-radius: 5px;
+}
+.anii{
+   height: 20px;
+   width: 20px;
+   background:transparent;
+   border-radius: 50px;
+   display: flex;
+   justify-content: center;
+   margin: 0 auto !important;
+   border: 2px solid lightgray;
+   border-top-color:dimgray;
+   animation: taptgd 0.7s ease-in-out infinite;
+}
+.xanii{
+    font-size: 20px !important;
+    background:transparent;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    padding-top: 2px;
+    margin: 0 auto !important;
+    color: dimgray;
+ }
+@keyframes taptgd {
+    0%{
+        transform: rotate(1turn);
+    }
+    50%{
+        transform: rotate(2turn);
+    }
+    100%{
+        transform: rotate(1turn);
+    }
+}
+
+.navca{
+    height: fit-content;
+    width: 450px;
+    background: #202023;
+    margin: 45px auto;
+    padding: 50px 0px 25px;
+    border-radius: 15px;
+}
+.tbitems{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.tbinitems{
+    padding: 2px 10px 2px 10px;
+    border-radius: 10px;
+    border: 1.5px solid cadetblue;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    margin: 10px;
+    cursor: pointer;
+}
+.section{
+    height: 85% !important;
+    width: 97%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 50px !important;
+    border-radius: 20px;
+    padding: 5px;
+    overflow: scroll !important;
+    overflow-x: none;
+    scroll-behavior: smooth;
+    z-index: -100;
+}
+
+.section::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+    width: 15px;
+    margin: 0;
+    padding: 0;
+}
+@media (max-width:991px) {
+    .navca{
+     margin: 78px auto;
+    }
+}
+@media (max-width:453px) {
+    .section {
+        margin-top: 35px !important;
+    }
+    .hnblacks {
+        height: 35px;
+        width: 35px;
+        top: 42px;
+        left: 10%;
+    }
+    .navca{
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+        width: auto;
+        margin: 41px auto;
+    }
+    .hnactbtn{
+        height: 25px;
+        width: 25px;
+    }
+    .xcross {
+        font-size: 12px;
+    }
+    .tabssbxsn{
+        top: -10px;
+    }
+}

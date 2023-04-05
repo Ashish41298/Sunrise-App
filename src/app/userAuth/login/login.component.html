@@ -1,0 +1,58 @@
+<div class="main_con">
+    <div mat-align-tabs="center" class="tab_align">
+        <div class="animate__animated animate__zoomInDown">
+            <h1 class="heading" routerLink="/home">LOGIN</h1>
+            <div class="formcon">
+                <h2></h2>
+                <form [formGroup]="loginForm" (ngSubmit)="submit()">
+                    <mat-form-field>
+                        <input matInput placeholder="Email address" formControlName="email" />
+                        <mat-error *ngIf="email?.errors?.['required']">
+                            Email is required
+                        </mat-error>
+                        <mat-error *ngIf="email?.errors?.['email']">
+                            Please enter a valid email 
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput [type]=" showPassword ? 'text' : 'password' " class="passice" placeholder="Password" formControlName="password" maxlength="17" />
+                        <span class="ice" (click)='showHidePassword()'><i class="fa-regular" [ngClass] ="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i> </span>
+                        <mat-error *ngIf="password?.errors?.['required']">
+                            Password is required
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div class="">
+
+                        <button type="submit" mat-button color="primary" class="Login_C ">Login</button>
+                        <button mat-button type="reset" color="primary" class="Login_C" (click)="reset()">Reset</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="sugebox">
+                <span class="suggetions">Are You Forgot <a class="sign-up-link" (click)="forgot()"> Password</a></span>
+                <span class="suggetions">New User? <a class="sign-up-link" (click)="Forswitch()">Sign up!</a></span>
+            </div>
+        </div>
+        <mat-divider style=" height: 3px; margin-top: 10px;"></mat-divider>
+        <div class="social" style="z-index: -10;" [class.class1]="msname">
+
+            <button mat-button style="border-radius: 10px;" class="" (click)="setd()">
+                            <img height="50px" width="50px" style="border: none; border-radius: 50px; overflow: hidden;" src="../../../assets/images/icons8-google-48.png" alt="">
+                </button>
+            <button mat-button style="border-radius: 10px;" class="large-button" (click)=" microsoft()">
+                    <img height="50px" width="50px" style="border: none; border-radius: 50px; overflow: hidden;" src="../../../assets/images/microsoft.png" alt="">
+            </button>
+            <button mat-button style="border-radius: 10px;" class="large-button" (click)="facebook()">
+                <img height="50px" width="50px" style="border: none; border-radius: 50px; overflow: hidden;" src="../../../assets/images/facebook.png" alt="">
+        </button>
+
+        </div>
+
+
+      
+
+    </div>
+</div>
+

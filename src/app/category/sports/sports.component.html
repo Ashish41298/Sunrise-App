@@ -1,0 +1,73 @@
+
+<div class="datagg" style="height:100%; width:100%;" *ngIf="sports=='' ">
+    <div class="seccon404">
+        <div class="errortxt">
+          <h1 class="err404">404-Error</h1>
+        </div>
+          <div class="container-fluid ginrcon">
+            <img class="img-fluid" style="height: 100%; width:100%;" src="https://static.wixstatic.com/media/a27d24_16bbdb1ff1594bb6bc7f5649f07c1781~mv2.gif/v1/fit/w_800%2Ch_600%2Cal_c%2Cq_80,enc_auto/file.gif" alt="">
+          </div>
+        <div class="pgerr">
+          <h1 class="pg404">Data Not Found!</h1>
+          <div class="loader-line"></div>
+          <button mat-button class="goback" (click)="goback()" >Go Back</button>
+        </div>
+      </div>
+</div>
+
+<div class="tabtg" *ngIf="sperr == true">
+    <div class="itstg animate__animated" [ngClass]="sht ? 'animate__bounceIn' : 'animate__bounce' "  >
+        <button mat-icon-button (click)="shbtn()">
+            <div class="anii" [ngClass]="sht ? 'd-none' : 'anii'"></div>
+            <i class="fa-solid fa-xmark xanii" [ngClass]="sht ? 'xanii' : 'd-none'"></i>
+        </button>
+    </div>
+    
+  <div class="tabs-box" [ngClass]="sht ? 'tabsshow' : 'tabshide'">
+    <button mat-icon-button class="tabshome egloo" (click)="tabsnav0()">
+        <span class="scroll">category</span>
+        <i class="fas fa-igloo tabsicon"></i>
+      </button>
+    <button mat-icon-button class="tabshome" (click)="tabsnav1()">
+        <i class="fas fa-house-damage tabsicon"></i>
+      </button>
+    <button mat-icon-button class="tabsbtn snavbs" (click)="scroll(target)">
+        <span class="scroll">scroll</span>
+        <i class="fa-brands fa-autoprefixer tabsi"></i>
+    </button>
+  </div>
+  </div>
+  
+  <div class="container-fluid topdown" #target id="target">
+
+    <div class="row rmain">
+        <div *ngFor="let newdata of sports;let i = index" class="col-lg-3  col-md-6 col-lg-2 tpheading">
+            <div class="atbg animate__animated animate__flipInX">
+                <div class="bg">
+                    <div class="mcimage">
+                        <div class="mystyle" id="mystyle" >
+                        </div>
+                            
+                            <ng-container *ngIf="newdata.content; else elseNotDone">
+                                <img src="{{newdata.content.aurl}}"   id="notfound" class="mcimage " height="100%" width="100%">  
+                              </ng-container>
+                              <ng-template #elseNotDone>
+                                <img src="../../assets/tv.png" id="notfound" class="mcimage " height="100%" width="100%">
+                              </ng-template>
+                    </div>
+
+                    <div class="box" *ngIf="newdata.title">
+                        <h2 class="hero mb-3">{{newdata.title}}</h2>
+                        <p class="description mb-3">{{newdata.pubDate}}</p>
+                        <div style="text-align: center;">
+                            <button mat-raised-button class=" lbtn" color="primary"> <a href="{{newdata.link[0]}}"type="submit" 
+                   target="_blank" class="text-center"><i class="fas fa-atlas readmore"> </i><span>Read more</span></a></button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+
+

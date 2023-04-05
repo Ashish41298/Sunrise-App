@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+body{
+    height: 100% !important;
+    overflow-y: hidden !important;
+}
+/*===Login component===*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:host .ngb-toasts {
+    left: 0 !important;
+    bottom: 0 !important;
+    background: yellow !important;
+}
+
+.social {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.passice{
+    position: relative !important;
+}
+.fa-eye{
+ position: absolute;
+ right: 5px;
+}
+.fa-eye-slash{
+    position: absolute;
+    right: 4px;
+   }
+
+.googleadd {
+    display: none;
+}
+
+.class1 {
+    display: none;
+}
+.main_con {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    background: radial-gradient(rgb(25 19 60 / 30%), transparent);
+}
+
+.tab_align {
+    height: 425px !important;
+    width: 450px !important;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50% );
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    border: 5px solid rgb(255, 255, 255, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 35px, rgba(0, 0, 0, 0.22) 0px 10px 25px;
+    padding: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5px;
+    padding: 0px 30px 7px 30px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.formcon {
+    padding: 0px 15px
+}
+
+.sugebox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 3px;
+}
+
+.suggetions {
+    color: white;
+    font-size: 11;
+    font-weight: normal;
+    margin: 0px 10px 0px 0px;
+    padding: 5px 10px 5px 12px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    width: auto;
+    overflow: hidden;
+}
+
+.suggetions a {
+    font-size: 11;
+    color: rgb(20, 163, 220);
+    border-left: 2px solid white;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+.heading {
+    color: white;
+    margin: 5px auto;
+    text-align: center;
+    font-size: 17px;
+    padding: 5px 10px 5px 12px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    width: 3.6cm;
+    overflow: hidden;
+    position: relative;
+}
+
+.heading:hover {
+    letter-spacing: 1px;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.heading::after {
+    content: '';
+    position: absolute;
+    left: 17px;
+    top: 7px;
+    bottom: 6.7px;
+    background: rgb(217, 219, 224);
+    height: 10px;
+    width: 2.5px;
+    transform: rotate(150deg);
+    transition: 0.3s;
+    transform-origin: right;
+}
+
+.heading:hover::after {
+    transform: rotate(270deg);
+    transition-delay: 200ms;
+}
+
+.heading:hover::before {
+    transform: rotate(-270deg);
+    transition-delay: 200ms;
+    top: 5px;
+}
+
+.heading:hover::after,
+.heading:hover::before {
+    top: 5px;
+    height: 28px;
+    transform: rotateX(-360deg);
+    background: rgb(214, 57, 123);
+}
+
+.heading::before {
+    content: '';
+    position: absolute;
+    right: 17px;
+    top: 6px;
+    bottom: 6.7px;
+    background: rgb(217, 219, 224);
+    height: 10px;
+    width: 2.5px;
+    transform: rotate(-150deg);
+    transition: 0.3s;
+    transform-origin: right;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(200deg);
+    }
+}
+
+.suggetions:hover a {
+    letter-spacing: 1px;
+}
+
+.Login_C {
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    transition: 200ms ease-in;
+    color: white !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+    position: relative;
+    margin: 25px 10px 0px 0px;
+    top: -15px;
+    left: 7%;
+    right: 7%;
+    top: -15px;
+}
+
+.animate__animated {
+    --animate-duration: 2s;
+}
+
+.Login_C:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    background: rgb(240, 229, 229, 0.5) !important;
+    color: black !important;
+}
+
+@media (max-width:460px) {
+    .tab_align {
+        height: 520px !important;
+        width: auto !important;
+    }
+    .Forgot_s {
+        left: 17%;
+    }
+    .sugebox {
+        margin-top: -10px;
+        flex-direction: column;
+    }
+  
+    .Login_C {
+        text-align: center;
+        width: 5.7cm;
+        padding-right: -30px !important;
+        margin-left: -18px;
+    }
+    .suggetions {
+        margin: 10px 10px 0px 0px;
+        padding: 5px 10px 5px 12px;
+        width: 5.6cm;
+        text-align: center;
+    }
+    mat-form-field {
+        width: 5.6cm;
+        font-size: 16px !important;
+    }
+    
+    
+}
+@media (max-width:344px) {
+    .tab_align {
+        width: 300px !important;
+    }
+}
+@media (max-width:300px) {
+    .tab_align {
+        height: 520px !important;
+        width: 250px !important;
+    }
+    .Login_C {
+        text-align: center;
+        width: 5cm;
+    }
+    .sugebox {
+        flex-direction: column;
+    }
+    .suggetions {
+        margin: 10px 10px 0px 0px;
+        padding: 5px 10px 5px 12px;
+        width: 5cm;
+    }
+    mat-form-field {
+        width: auto;
+    }
+    .formcon{
+        margin: 0px;
+    }
+}
+
+ 
+mat-divider {
+    background: linear-gradient(25deg, rgb(109, 72, 211), transparent, rgb(109, 72, 211))
+}
+
+@media screen and (max-width:320px), screen and (max-height:568px){
+    .tab_align {
+        height: 350px !important;
+        margin-top: -110px;
+        overflow: scroll;
+    }
+}
+.mat-error {
+    font-size: 15px !important;
+    color: crimson;
+}
+mat-form-field {
+    color: black !important;
+    font-size: 1rem;
+    font-weight: 100;
+    padding-bottom: 5px;
+}
+
+::ng-deep .mat-form-field-label {
+    color: black !important;
+}
+::ng-deep .mat-focused .mat-form-field-label {
+    color: rgb(0, 98, 128) !important;
+    font-size: 16px !important;
+}
+
+ ::ng-deep.mat-form-field-underline {
+    background: rgb(0, 98, 128) !important;
+    height: 1.7px !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    background: linear-gradient(150deg, black, transparent, black);
+    height: 2.6px !important;
+}
